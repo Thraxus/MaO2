@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaO2", "MaO2.csproj", "{EF832057-1E6C-417F-95C9-2594BFE4BC39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF832057-1E6C-417F-95C9-2594BFE4BC39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF832057-1E6C-417F-95C9-2594BFE4BC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF832057-1E6C-417F-95C9-2594BFE4BC39}.Debug|x64.ActiveCfg = Debug|x64
+		{EF832057-1E6C-417F-95C9-2594BFE4BC39}.Debug|x64.Build.0 = Debug|x64
+		{EF832057-1E6C-417F-95C9-2594BFE4BC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF832057-1E6C-417F-95C9-2594BFE4BC39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF832057-1E6C-417F-95C9-2594BFE4BC39}.Release|x64.ActiveCfg = Release|x64
+		{EF832057-1E6C-417F-95C9-2594BFE4BC39}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7DEA1923-CA0C-4E10-A0CB-F4D29FA19AFE}
+	EndGlobalSection
+EndGlobal

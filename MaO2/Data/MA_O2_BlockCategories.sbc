@@ -1,0 +1,19 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CategoryClasses>
+    <Category xsi:type="MyObjectBuilder_GuiBlockCategoryDefinition">
+      <Id>
+        <TypeId>GuiBlockCategoryDefinition</TypeId>
+        <SubtypeId/>
+      </Id>
+      <DisplayName>MA</DisplayName>
+      <Name>AutoMcD_Astronautical</Name>
+      <ItemIds>
+        <string>OxygenGenerator/MA_O2</string>
+        <string>UpgradeModule/MA_at_upgrade_productivity</string>
+	    <string>UpgradeModule/MA_at_upgrade_effectiveness</string>
+		<string>UpgradeModule/MA_at_upgrade_energy</string>
+      </ItemIds>
+    </Category>
+  </CategoryClasses>
+</Definitions>
