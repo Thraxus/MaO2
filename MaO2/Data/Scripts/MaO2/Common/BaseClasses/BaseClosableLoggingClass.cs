@@ -10,7 +10,7 @@ namespace MaO2.Common.BaseClasses
 
 		protected abstract string Id { get; }
 		
-		protected void WriteToLog(string caller, string message, LogType type, bool showOnHud = false, int duration = CommonSettings.DefaultLocalMessageDisplayTime, string color = MyFontEnum.Green)
+		protected void WriteToLog(string caller, string message, LogType type, bool showOnHud = false, int duration = Settings.DefaultLocalMessageDisplayTime, string color = MyFontEnum.Green)
 		{
 			OnWriteToLog?.Invoke($"{Id}: {caller}", message, type, showOnHud, duration, color);
 		}

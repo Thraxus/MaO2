@@ -40,7 +40,7 @@ namespace MaO2.Common.Utilities.Tools.Logging
 			TextWriter = null;
 		}
 
-		public void WriteToLog(string caller, string message, bool showOnHud = false, int duration = CommonSettings.DefaultLocalMessageDisplayTime, string color = MyFontEnum.Green)
+		public void WriteToLog(string caller, string message, bool showOnHud = false, int duration = Settings.DefaultLocalMessageDisplayTime, string color = MyFontEnum.Green)
 		{
 			BuildLogLine(caller, message);
 			if (!showOnHud) return;

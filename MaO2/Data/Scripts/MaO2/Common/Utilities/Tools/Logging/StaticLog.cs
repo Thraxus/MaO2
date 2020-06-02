@@ -8,8 +8,8 @@ namespace MaO2.Common.Utilities.Tools.Logging
 	[MySessionComponentDescriptor(MyUpdateOrder.NoUpdate, priority: int.MinValue)]
 	internal class StaticLog : MySessionComponentBase
 	{
-		private const string GeneralLogName = CommonSettings.StaticGeneralLogName;
-		private const string ExceptionLogName = CommonSettings.ExceptionLogName;
+		private const string GeneralLogName = Settings.StaticGeneralLogName;
+		private const string ExceptionLogName = Settings.ExceptionLogName;
 
 		private static Log _generalLog;
 		private static Log _exceptionLog;
@@ -43,7 +43,7 @@ namespace MaO2.Common.Utilities.Tools.Logging
 			base.UnloadData();
 		}
 
-		public static void WriteToLog(string caller, string message, LogType type, bool showOnHud = false, int duration = CommonSettings.DefaultLocalMessageDisplayTime, string color = MyFontEnum.Green)
+		public static void WriteToLog(string caller, string message, LogType type, bool showOnHud = false, int duration = Settings.DefaultLocalMessageDisplayTime, string color = MyFontEnum.Green)
 		{
 			switch (type)
 			{

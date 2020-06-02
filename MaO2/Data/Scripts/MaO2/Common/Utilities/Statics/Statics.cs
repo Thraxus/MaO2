@@ -13,6 +13,7 @@ using VRage.Game;
 using VRage.Game.Entity;
 using VRage.Game.ModAPI;
 using VRage.Game.ModAPI.Ingame;
+using VRage.Utils;
 using VRageMath;
 using IMyCubeGrid = VRage.Game.ModAPI.IMyCubeGrid;
 using IMyEntity = VRage.ModAPI.IMyEntity;
@@ -303,6 +304,12 @@ namespace MaO2.Common.Utilities.Statics
 		public static void AddGpsLocation(string message, Vector3D location)
 		{
 			MyAPIGateway.Session.GPS.AddGps(MyAPIGateway.Session.LocalHumanPlayer.IdentityId, MyAPIGateway.Session.GPS.Create(message, "", location, true));
+		}
+
+		public static double GetAngleBetweenDirections(Vector3D dirA, Vector3D dirB)
+		{
+			float radians = MyUtils.GetAngleBetweenVectors(dirA, dirB);
+			return (180 / Math.PI) * radians;
 		}
 
 		#endregion

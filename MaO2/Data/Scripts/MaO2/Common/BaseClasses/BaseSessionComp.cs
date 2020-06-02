@@ -30,9 +30,9 @@ namespace MaO2.Common.BaseClasses
 				case CompType.Both:
 					return false;
 				case CompType.Client:
-					return CommonSettings.IsServer;
+					return Settings.IsServer;
 				case CompType.Server:
-					return !CommonSettings.IsServer;
+					return !Settings.IsServer;
 				default:
 					return false;
 			}
@@ -63,7 +63,7 @@ namespace MaO2.Common.BaseClasses
 		{
 			_superEarlySetupComplete = true;
 			_generalLog = new Log(CompName);
-			WriteToLog("SuperEarlySetup", $"Waking up.  Is Server: {CommonSettings.IsServer}", LogType.General);
+			WriteToLog("SuperEarlySetup", $"Waking up.  Is Server: {Settings.IsServer}", LogType.General);
 		}
 
 		public override void BeforeStart()
@@ -126,7 +126,7 @@ namespace MaO2.Common.BaseClasses
 			_generalLog?.Close();
 		}
 
-		public void WriteToLog(string caller, string message, LogType type, bool showOnHud = false, int duration = CommonSettings.DefaultLocalMessageDisplayTime, string color = MyFontEnum.Green)
+		public void WriteToLog(string caller, string message, LogType type, bool showOnHud = false, int duration = Settings.DefaultLocalMessageDisplayTime, string color = MyFontEnum.Green)
 		{
 			switch (type)
 			{
