@@ -138,7 +138,11 @@ namespace MaO2.Models
 		private void UpdateInfo(StringBuilder detailedInfo)
 		{
 			//detailedInfo.Clear();
-			detailedInfo.AppendStringBuilder(MyTexts.Get(MySpaceTexts.BlockPropertiesText_RequiredInput));
+			detailedInfo.Append("\n");
+			detailedInfo.Append("Actual Max Required: ");
+			MyValueFormatter.AppendWorkInBestUnit(MySink.MaxRequiredInputByType(MyResourceDistributorComponent.ElectricityId), detailedInfo);
+			detailedInfo.Append("\n");
+			detailedInfo.Append("Current Power Use: ");
 			MyValueFormatter.AppendWorkInBestUnit(_thisGenerator.ResourceSink.RequiredInputByType(MyResourceDistributorComponent.ElectricityId), detailedInfo);
 			detailedInfo.AppendFormat("\n\n");
 			detailedInfo.Append("Power Efficiency: ");
@@ -148,7 +152,7 @@ namespace MaO2.Models
 			detailedInfo.Append(((1f/_thisGenerator.ProductionCapacityMultiplier) * 100.0).ToString(" 0"));
 			detailedInfo.Append("%\n");
 			detailedInfo.Append("Speed Multiplier: ");
-			detailedInfo.Append(((_thisGenerator.UpgradeValues[Speed] - 1f) * 100.0).ToString(" 0"));
+			detailedInfo.Append(((_thisGenerator.UpgradeValues[Speed]) * 100.0).ToString(" 0"));
 			detailedInfo.Append("%\n");
 		}
 
