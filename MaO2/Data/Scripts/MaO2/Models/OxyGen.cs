@@ -6,9 +6,7 @@ using Sandbox.Common.ObjectBuilders;
 using Sandbox.Definitions;
 using Sandbox.Game.Entities;
 using Sandbox.Game.EntityComponents;
-using Sandbox.Game.Localization;
 using Sandbox.ModAPI;
-using VRage;
 using VRage.Game;
 using VRage.Game.Entity;
 using VRage.Game.ObjectBuilders.Definitions;
@@ -19,13 +17,13 @@ namespace MaO2.Models
 {
 	public class OxyGen : BaseClosableLoggingClass
 	{
-		protected sealed override string Id { get; } = "OxyGen";
+        protected sealed override string Id { get; } = "OxyGen";
 
 		public override void Close()
 		{
 			base.Close();
 			_thisGenerator.OnUpgradeValuesChanged -= OnUpgradeValuesChanged;
-			_thisGenerator.AppendingCustomInfo -= AppendingCustomInfo;
+            _thisGenerator.AppendingCustomInfo -= AppendingCustomInfo;
 			MySink.RequiredInputChanged -= OnRequiredInputChanged;
 			_thisGenerator.OnClose -= OnClose;
 			WriteToLog("Close:", $"I'm out! {_thisGenerator.EntityId}", LogType.General);
@@ -41,8 +39,8 @@ namespace MaO2.Models
 		private const string Power = "PowerEfficiency";
 		private const string Yield = "Effectiveness";
 		private const string Speed = "Productivity";
-		private const float BasePowerConsumptionMultiplier = 1f;
-		private const float BaseProductionCapacityMultiplier = 1f;
+        private const float BasePowerConsumptionMultiplier = 1f;
+        private const float BaseProductionCapacityMultiplier = 1f;
 
 		private const float KshDefaultMultiplier = 150f;
 		private readonly float _baseOxyMaxOutput;
@@ -70,6 +68,7 @@ namespace MaO2.Models
 			_thisGenerator.AddUpgradeValue(Power, 1f);
 			_thisGenerator.AddUpgradeValue(Yield, 1f);
 			_thisGenerator.AddUpgradeValue(Speed, 1f);
+			
 
 			MyObjectBuilder_OxygenGenerator x = (MyObjectBuilder_OxygenGenerator) _thisGenerator.GetObjectBuilderCubeBlock();
 
@@ -104,24 +103,9 @@ namespace MaO2.Models
 		}
 
 		private void UpdateTerminal()
-		{
-			MyOwnershipShareModeEnum shareMode;
-			long ownerId;
-			if (_thisCubeBlock.IDModule != null)
-			{
-				ownerId = _thisCubeBlock.IDModule.Owner;
-				shareMode = _thisCubeBlock.IDModule.ShareMode;
-			}
-			else
-			{
-				IMyTerminalBlock sorter = _thisCubeBlock as IMyTerminalBlock;
-				if (sorter == null) return;
-				sorter.ShowOnHUD = !sorter.ShowOnHUD;
-				sorter.ShowOnHUD = !sorter.ShowOnHUD;
-				return;
-			}
-			_thisCubeBlock.ChangeOwner(ownerId, shareMode == MyOwnershipShareModeEnum.None ? MyOwnershipShareModeEnum.Faction : MyOwnershipShareModeEnum.None);
-			_thisCubeBlock.ChangeOwner(ownerId, shareMode);
+        {
+            _thisGenerator.ShowInTerminal = !_thisGenerator.ShowInTerminal;
+            _thisGenerator.ShowInTerminal = !_thisGenerator.ShowInTerminal;
 		}
 
 		private void OnClose(IMyEntity closedEntity)
@@ -137,7 +121,6 @@ namespace MaO2.Models
 
 		private void UpdateInfo(StringBuilder detailedInfo)
 		{
-			//detailedInfo.Clear();
 			detailedInfo.Append("\n");
 			detailedInfo.Append("Actual Max Required: ");
 			MyValueFormatter.AppendWorkInBestUnit(MySink.MaxRequiredInputByType(MyResourceDistributorComponent.ElectricityId), detailedInfo);

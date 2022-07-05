@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MaO2</RootNamespace>
     <AssemblyName>MaO2</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -176,19 +177,25 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MaO2\Textures\Icons\MA_at_upgrade_effectiveness.dds" />
-    <Content Include="MaO2\Textures\Icons\MA_at_upgrade_energy.dds" />
-    <Content Include="MaO2\Textures\Icons\MA_at_upgrade_productivity.dds" />
-    <Content Include="MaO2\Textures\Icons\MA_O2.dds" />
-    <Content Include="MaO2\thumb.jpg" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="MaO2\Data\MA_BlockVariantGroups.sbc" />
     <None Include="MaO2\Data\MA_O2_BlockCategories.sbc" />
     <None Include="MaO2\Data\MA_O2_Cubeblocks.sbc" />
     <None Include="MaO2\Models\MA_O2\MA_at_upgrade_effectiveness.mwm" />
     <None Include="MaO2\Models\MA_O2\MA_at_upgrade_energy.mwm" />
     <None Include="MaO2\Models\MA_O2\MA_at_upgrade_productivity.mwm" />
     <None Include="MaO2\Models\MA_O2\MA_O2.mwm" />
+    <None Include="MaO2\Models\MA_O2\MA_O2_Constr1.mwm" />
+    <None Include="MaO2\Models\MA_O2\MA_O2_Constr2.mwm" />
+    <None Include="MaO2\Models\MA_O2\MA_O2_Constr3.mwm" />
+    <None Include="MaO2\Models\MA_O2\MA_O2_LOD1.mwm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MaO2\metadata.mod" />
+    <Content Include="MaO2\Textures\Icons\MA_at_upgrade_effectiveness.dds" />
+    <Content Include="MaO2\Textures\Icons\MA_at_upgrade_energy.dds" />
+    <Content Include="MaO2\Textures\Icons\MA_at_upgrade_productivity.dds" />
+    <Content Include="MaO2\Textures\Icons\MA_O2.dds" />
+    <Content Include="MaO2\thumb.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

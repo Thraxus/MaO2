@@ -13,7 +13,7 @@ namespace MaO2
 	public class MaCore : BaseSessionComp
 	{
 		protected override string CompName { get; } = "MaCore";
-		protected override CompType Type { get; } = CompType.Server;
+		protected override CompType Type { get; } = CompType.Both;
 		protected override MyUpdateOrder Schedule { get; } = MyUpdateOrder.NoUpdate;
 
 		private readonly MyConcurrentList<OxyGen> _generators = new MyConcurrentList<OxyGen>();
